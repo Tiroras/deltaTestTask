@@ -2,7 +2,6 @@ const url = "https://api.rawg.io/api/";
 
 export const api = {
   async getGames(pageSize, search, ordering, platforms) {
-    console.log(platforms);
     const data = await fetch(
       `${url}games?key=${process.env.API_KEY}&page_size=${pageSize}${
         search && `&search=${search}`

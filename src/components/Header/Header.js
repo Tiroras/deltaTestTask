@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   background-color: ${colors.black3};
   color: ${colors.white};
   height: 48px;
-  min-height: 5vh;
+  max-height: 5vh;
   padding: 5px 30px;
 `;
 

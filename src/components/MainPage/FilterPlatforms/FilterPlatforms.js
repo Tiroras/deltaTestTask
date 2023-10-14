@@ -19,7 +19,6 @@ export const FilterPlatforms = ({
   localPlatforms,
   setLocalPlatforms,
 }) => {
-  console.log(localPlatforms);
   const [openList, setOpenList] = useState(false);
   const windowWidth = useRef(null);
 
