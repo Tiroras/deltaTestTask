@@ -13,9 +13,9 @@ const Wrapper = styled.div`
   padding: 0 20px;
 `;
 
-export const GamesList = ({ data, search, ordering, selectedPlatforms }) => {
+export const GamesList = ({ search, ordering, selectedPlatforms }) => {
   const [pageSize, setPageSize] = useState(10);
-  const [games, setGames] = useState(data);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {

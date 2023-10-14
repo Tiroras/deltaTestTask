@@ -7,10 +7,10 @@ import { colors } from "@/styles/variables";
 
 const ListWrapper = styled.div`
   background-color: ${colors.black4};
-  width: ${({ desktop }) => (desktop ? "220px" : "100%")};
+  width: ${({ $desktop }) => ($desktop ? "220px" : "100%")};
   z-index: 1;
   border-radius: 5px;
-  ${({ desktop }) => (desktop ? "position: absolute;" : "")}
+  ${({ $desktop }) => ($desktop ? "position: absolute;" : undefined)}
 `;
 
 const Title = styled.div`
@@ -24,7 +24,7 @@ const List = styled.div`
   max-height: 235px;
   overflow-y: scroll;
   padding: 20px;
-  width: ${({ desktop }) => (desktop ? "220px" : "100%")};
+  width: ${({ $desktop }) => ($desktop ? "220px" : "100%")};
 `;
 
 const StyledButton = styled(Button)`
@@ -40,9 +40,9 @@ export const FilterList = ({
   handleClose,
 }) => {
   return (
-    <ListWrapper desktop={isDesktop}>
+    <ListWrapper $desktop={isDesktop}>
       {!isDesktop ? <Title>Platforms</Title> : null}
-      <List desktop={isDesktop}>
+      <List $desktop={isDesktop}>
         {platforms.map((platform) => (
           <FilterCheckbox
             key={platform.id}

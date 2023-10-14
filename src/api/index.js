@@ -8,26 +8,20 @@ export const api = {
       }${ordering && `&ordering=${ordering}`}${
         platforms && `&platforms=${platforms}`
       }`,
-      { next: { revalidate: 3600 } },
     );
     return data.json();
   },
   async getGame(slug) {
-    const data = await fetch(`${url}games/${slug}?key=${process.env.API_KEY}`, {
-      next: { revalidate: 3600 },
-    });
+    const data = await fetch(`${url}games/${slug}?key=${process.env.API_KEY}`);
     return data.json();
   },
   async getPlatforms() {
-    const data = await fetch(`${url}platforms?key=${process.env.API_KEY}`, {
-      next: { revalidate: 3600 },
-    });
+    const data = await fetch(`${url}platforms?key=${process.env.API_KEY}`);
     return data.json();
   },
   async getGameScreenShots(slug) {
     const data = await fetch(
       `${url}games/${slug}/screenshots?key=${process.env.API_KEY}`,
-      { next: { revalidate: 36000 } },
     );
     return data.json();
   },

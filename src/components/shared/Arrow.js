@@ -7,7 +7,8 @@ const StyledSvg = styled.svg`
   margin: 0 5px;
   position: absolute;
   transition: 300ms;
-  ${({ rotated, angle }) => rotated && `transform: rotate(${angle}deg);`}
+  ${({ $rotated, $angle }) =>
+    $rotated ? `transform: rotate(${$angle}deg);` : undefined}
 `;
 
 export const Arrow = ({
@@ -20,8 +21,8 @@ export const Arrow = ({
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
-    rotated={isRotated}
-    angle={rotateAngle}
+    $rotated={isRotated}
+    $angle={rotateAngle}
     viewBox="0 0 24 24"
   >
     <polygon

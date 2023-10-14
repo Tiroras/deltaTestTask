@@ -23,7 +23,7 @@ export const FilterCheckbox = ({ name, id, checked, handleCheck }) => {
         <Checkbox
           checked={checked}
           type="checkbox"
-          onClick={() => handleCheck(id)}
+          onChange={() => handleCheck(id)}
         />
         <span>{name}</span>
       </Label>

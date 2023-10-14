@@ -17,7 +17,7 @@ const FormUtilsButtons = styled.div`
   }
 `;
 
-export const MainPage = ({ data, platforms }) => {
+export const MainPage = ({ platforms }) => {
   const [search, setSearch] = useState("");
   const [ordering, setOrdering] = useState("");
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
@@ -53,7 +53,6 @@ export const MainPage = ({ data, platforms }) => {
         selectedPlatforms={selectedPlatforms}
       />
       <GamesList
-        data={data}
         search={search}
         ordering={ordering}
         selectedPlatforms={selectedPlatforms}
