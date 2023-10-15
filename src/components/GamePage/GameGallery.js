@@ -6,7 +6,7 @@ import { Arrow } from "../shared/Arrow";
 import { colors } from "@/styles/variables";
 
 const Wrapper = styled.div`
-  display: inline-block;
+  display: flex;
   position: relative;
 `;
 
