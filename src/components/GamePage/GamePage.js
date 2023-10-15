@@ -37,12 +37,21 @@ const Fragment = styled.div`
   margin: 5px 0;
 `;
 
+const StyledLink = styled(Link)`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const GamePage = ({ game, screenshots }) => {
   const router = useRouter();
 
   const handleBack = () => {
     router.back();
   };
+
+  const formatDate = (date) =>
+    date ? date.split("-").reverse().join(".") : "N/A";
 
   return (
     <Wrapper>
@@ -64,7 +73,7 @@ export const GamePage = ({ game, screenshots }) => {
         <Padding>
           <Fragment>
             <Span>Release date: </Span>
-            {game.released}
+            {formatDate(game.released)}
           </Fragment>
           <Fragment>
             <Span>Rating: </Span>
@@ -72,7 +81,7 @@ export const GamePage = ({ game, screenshots }) => {
           </Fragment>
           <Fragment>
             <Span>Website: </Span>
-            <Link href={game.website}>{game.website}</Link>
+            <StyledLink href={game.website}>{game.website}</StyledLink>
           </Fragment>
           <Fragment>
             <Span>Description: </Span>

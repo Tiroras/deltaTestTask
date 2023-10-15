@@ -54,7 +54,7 @@ export const GameGallery = ({ screenshots }) => {
       : setSelectedIndex(index);
   };
 
-  return (
+  return screenshots[selectedIndex]?.image ? (
     <Wrapper>
       <LeftButton onClick={() => handleLeft(selectedIndex - 1)}>
         <Arrow isRotated rotateAngle={90} />
@@ -69,5 +69,5 @@ export const GameGallery = ({ screenshots }) => {
         <Arrow isRotated rotateAngle={-90} />
       </RightButton>
     </Wrapper>
-  );
+  ) : null;
 };
