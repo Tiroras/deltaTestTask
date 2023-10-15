@@ -37,6 +37,7 @@ const InfoSpan = styled.span`
 `;
 
 export const Game = ({ game }) => {
+  console.log("game");
   const formatDate = (date) =>
     date ? date.split("-").reverse().join(".") : "N/A";
   return (

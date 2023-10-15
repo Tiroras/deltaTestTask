@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import { NoGames } from "./NoGames";
 import { variables } from "@/styles/variables";
@@ -33,7 +33,7 @@ export const GamesList = ({ search, ordering, selectedPlatforms }) => {
         window.innerHeight + document.documentElement.scrollTop ===
         document.documentElement.offsetHeight
       ) {
-        setPageSize((size) => size + 10);
+        setPageSize((size) => (loading ? size : size + 10));
       }
     };
 
@@ -41,9 +41,9 @@ export const GamesList = ({ search, ordering, selectedPlatforms }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [loading]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updateGames = async () => {
       setLoading(true);
       const data = await api.getGames(
